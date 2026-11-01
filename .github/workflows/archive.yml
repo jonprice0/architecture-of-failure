@@ -1,0 +1,57 @@
+# Submits the repository page and every edition file to the Internet Archive's
+# Save Page Now, and records the archive URLs. Run by hand after publication —
+# archiving a page before it is public accomplishes nothing.
+name: archive
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  wayback:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Save Page Now
+        run: |
+          set -u
+          mkdir -p timestamps
+          OUT=timestamps/wayback.txt
+          : > "$OUT"
+          {
+            echo "# Internet Archive snapshots — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "# submitted by .github/workflows/archive.yml"
+            echo
+          } >> "$OUT"
+          RAW="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main"
+          submit () {
+            url="$1"
+            loc=$(curl -sS -I --max-time 90 "https://web.archive.org/save/${url}" \
+                  | tr -d '\r' | awk 'tolower($1)=="content-location:"{print $2}')
+            if [ -n "${loc:-}" ]; then
+              echo "https://web.archive.org${loc}  <-  ${url}" >> "$OUT"
+            else
+              echo "NOT ARCHIVED  <-  ${url}" >> "$OUT"
+            fi
+            sleep 6
+          }
+          submit "https://github.com/${GITHUB_REPOSITORY}"
+          while IFS= read -r line; do
+            name=${line#*  }
+            enc=$(python3 -c "import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))" "$name")
+            submit "${RAW}/${enc}"
+          done < SHA256SUMS
+          cat "$OUT"
+
+      - name: Commit the archive URLs
+        run: |
+          set -eu
+          git config user.name  "wayback (github actions)"
+          git config user.email "actions@github.com"
+          git add timestamps/wayback.txt
+          git diff --cached --quiet && exit 0
+          git commit -m "Internet Archive: snapshot URLs for the edition [skip ci]"
+          git push

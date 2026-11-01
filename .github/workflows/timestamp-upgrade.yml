@@ -1,0 +1,40 @@
+# Upgrades pending OpenTimestamps proofs once they are confirmed in a Bitcoin
+# block (usually within a day) and commits the upgraded proofs. Runs daily and
+# stops being useful once every proof is complete; it is safe to leave running.
+name: timestamp-upgrade
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet opentimestamps-client
+
+      - name: Upgrade and verify
+        run: |
+          set -eu
+          [ -d timestamps ] || { echo "nothing stamped yet"; exit 0; }
+          for p in timestamps/*.ots; do
+            echo "--- $p"
+            ots upgrade "$p" || true
+            ots info "$p" | head -5 || true
+          done
+          rm -f timestamps/*.ots.bak
+
+      - name: Commit if anything upgraded
+        run: |
+          set -eu
+          git config user.name  "opentimestamps (github actions)"
+          git config user.email "actions@github.com"
+          git add timestamps
+          git diff --cached --quiet && { echo "still pending"; exit 0; }
+          git commit -m "OpenTimestamps: upgraded proofs (Bitcoin-attested) [skip ci]"
+          git push

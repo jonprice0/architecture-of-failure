@@ -1,0 +1,142 @@
+{
+  "generated_utc": "2026-11-01T22:23:40Z",
+  "sources": {
+    "FINAL": {
+      "path": "The_Architecture_of_Failure_FINAL.md",
+      "sha256": "f667c8525f299de26a2bc67747dde1153756aed067890fa9ea9efa295aaec0ee",
+      "lines": 15343
+    },
+    "PARTITA": {
+      "path": "The Yaowarat Partita (CANONICAL — Log 1 draft).md",
+      "sha256": "584b2a01362e3a734041d9678c6d1e3eb7573a5ba118a40460ff5044e134c131",
+      "lines": 3907
+    }
+  },
+  "substitutions": [
+    {
+      "file": "partita",
+      "line": 2158,
+      "rule": "author's email address -> [address redacted] (JP 2026-10-30 19:58 ET)"
+    }
+  ],
+  "outputs": {
+    "01 The Yaowarat Partita.md": {
+      "sha256": "6cce11633d7b5b80593437c573c163359b1d14c4a2010f44cd789c1e3521a1ee",
+      "bytes": 25046,
+      "words": 3709
+    },
+    "02 The Architecture of Failure — main text.md": {
+      "sha256": "02cc34ddd9419c218a510578eaa1bc48abc8bc7f0e5681927c82bcdea5d93133",
+      "bytes": 141960,
+      "words": 23287
+    },
+    "03 Log 1.md": {
+      "sha256": "f7560a34bc0074c8fa3d704782b74d42b1f67eabf86a8090bfb10ba8e26100bd",
+      "bytes": 175622,
+      "words": 27320
+    },
+    "04 Log 2.md": {
+      "sha256": "5768da63e80ebb6cc7fa1b1c6632e9a7a544917399c1033953b828b7618ae6c3",
+      "bytes": 150519,
+      "words": 22654
+    },
+    "05 Log 3.md": {
+      "sha256": "99c9590ebaaa7c2fb4a54c4527da9e52063287a3ac0f042b296b0bcc73d25fe7",
+      "bytes": 88404,
+      "words": 13001
+    },
+    "06 Log 4.md": {
+      "sha256": "372e64558dda1b203c1d752c6cc677daab9e841bd7cec2e545f056ebaeb323dc",
+      "bytes": 45008,
+      "words": 6644
+    },
+    "07 Log 5.md": {
+      "sha256": "5d4afcb54a7a306e8d093ef605132319f5d8c119c7b592c15059760be54ffc26",
+      "bytes": 352753,
+      "words": 55236
+    },
+    "08 Project Charter (publication copy).md": {
+      "sha256": "2628cb43d13bb3943ddb6b0c289152eb4fac8479191a4750db81f8a94b746b9f",
+      "bytes": 99371,
+      "words": 14186
+    },
+    "LICENSE": {
+      "sha256": "ef6733677648682250065f122ecd2fe725b7c057a461acaa6544653adb560e03",
+      "bytes": 913,
+      "words": 133
+    },
+    "text/log_1.txt": {
+      "sha256": "3b20ec21caed2d5606fbb3414284bb82950e0893e5994a12b08ec8eb252502a7",
+      "bytes": 175644,
+      "words": 27319
+    },
+    "text/log_2.txt": {
+      "sha256": "ac3b7b6ad09925c3ce4764b44f0891e323e1120e5be99aae9f44bc16465f6479",
+      "bytes": 150548,
+      "words": 22653
+    },
+    "text/log_3.txt": {
+      "sha256": "65404a67a9763a0a3f05d9d9bd826a88073472652cd4e4ee1c0c4a084ba433a1",
+      "bytes": 88434,
+      "words": 13000
+    },
+    "text/log_4.txt": {
+      "sha256": "0cbf26307766ae400481ab452779db30c6d5ccd97836ec9526f0b7307bcb4b82",
+      "bytes": 45038,
+      "words": 6643
+    },
+    "text/log_5.txt": {
+      "sha256": "c7fa7ec21a22edf19972447372b192541d6f3199dbd135c9e38b1e5fdc1f65f9",
+      "bytes": 352746,
+      "words": 55234
+    },
+    "text/main_text.txt": {
+      "sha256": "edca44f42e3f56222fdfea29466d9af90445f1a7afcaecd810ff10c22751a233",
+      "bytes": 141847,
+      "words": 23269
+    },
+    "text/partita.txt": {
+      "sha256": "3ac043f5ff5a1e19e812911a6c26e2b1cf33e6a25372e9fe3d339d9053648553",
+      "bytes": 25044,
+      "words": 3709
+    },
+    "jsonl/logs.jsonl": {
+      "sha256": "81ce0013a0ce38809c0945d2183e7d36a5544f81008433035cca250c89ed7fdb",
+      "bytes": 1489712,
+      "words": 208613
+    },
+    "jsonl/main_text.jsonl": {
+      "sha256": "f7a6af69258b241451b21075c52f3395e3179c8884257eca70bec40a614ca977",
+      "bytes": 173141,
+      "words": 26928
+    },
+    "jsonl/partita.jsonl": {
+      "sha256": "99add2d6285627bd2e69f5258f1de3af073252d300e8c002591305b204535021",
+      "bytes": 147062,
+      "words": 16839
+    }
+  },
+  "counts": {
+    "main_text_rows": 195,
+    "log_rows": {
+      "1": 1790,
+      "2": 721,
+      "3": 490,
+      "4": 441,
+      "5": 2149
+    },
+    "partita_rows": 1009
+  },
+  "structure": {
+    "addenda_marker_line": 487,
+    "log_head_lines": {
+      "1": 489,
+      "2": 6561,
+      "3": 8089,
+      "4": 9300,
+      "5": 10607
+    },
+    "log5_cut_line": 15309,
+    "log5_appended_block_line": 15312
+  }
+}

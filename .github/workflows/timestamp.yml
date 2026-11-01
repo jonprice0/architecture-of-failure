@@ -1,0 +1,55 @@
+# Stamps the edition with OpenTimestamps and commits the proofs back.
+#
+# Why this exists: the maintainer's build environment reaches only the package
+# registries and GitHub, so `ots stamp` cannot reach the calendar servers from
+# there. A GitHub runner can. This workflow is therefore the only place the
+# timestamp proofs can be produced, and it is machinery, not part of the record:
+# nothing here is covered by SHA256SUMS.
+name: timestamp
+
+on:
+  push:
+    branches: [main]
+    paths: ['SHA256SUMS']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: timestamp
+  cancel-in-progress: false
+
+jobs:
+  stamp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install the OpenTimestamps client
+        run: pip install --quiet opentimestamps-client
+
+      - name: Stamp SHA256SUMS and each of the eight parts
+        run: |
+          set -eu
+          mkdir -p timestamps
+          # SHA256SUMS commits every file's hash, so stamping it transitively
+          # timestamps the whole edition. The eight parts are stamped as well so
+          # that any one of them can be verified on its own.
+          ots stamp SHA256SUMS \
+            "01 The Yaowarat Partita.md" \
+            "02 The Architecture of Failure — main text.md" \
+            "03 Log 1.md" "04 Log 2.md" "05 Log 3.md" "06 Log 4.md" "07 Log 5.md" \
+            "08 Project Charter (publication copy).md"
+          for f in *.ots; do mv -- "$f" "timestamps/$f"; done
+          ls -la timestamps/
+
+      - name: Commit the pending proofs
+        run: |
+          set -eu
+          git config user.name  "opentimestamps (github actions)"
+          git config user.email "actions@github.com"
+          git add timestamps
+          git diff --cached --quiet && { echo "no new proofs"; exit 0; }
+          git commit -m "OpenTimestamps: pending proofs for the edition [skip ci]"
+          git push
