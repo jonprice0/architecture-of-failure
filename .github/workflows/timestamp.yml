@@ -10,8 +10,12 @@ name: timestamp
 on:
   push:
     branches: [main]
-    paths: ['SHA256SUMS']
   workflow_dispatch:
+
+# No `paths:` filter. A force-push or a history rewrite does not evaluate a
+# paths filter the way an ordinary push does, so the stamps silently went
+# stale once. Every push to main re-stamps instead; the bot's own commits
+# carry [skip ci], so this does not loop.
 
 permissions:
   contents: write
