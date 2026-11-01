@@ -32,7 +32,6 @@ jobs:
       - name: Stamp SHA256SUMS and each of the eight parts
         run: |
           set -eu
-          mkdir -p timestamps
           # SHA256SUMS commits every file's hash, so stamping it transitively
           # timestamps the whole edition. The eight parts are stamped as well so
           # that any one of them can be verified on its own.
@@ -41,15 +40,17 @@ jobs:
             "02 The Architecture of Failure — main text.md" \
             "03 Log 1.md" "04 Log 2.md" "05 Log 3.md" "06 Log 4.md" "07 Log 5.md" \
             "08 Project Charter (publication copy).md"
-          for f in *.ots; do mv -- "$f" "timestamps/$f"; done
-          ls -la timestamps/
+          # The proofs stay BESIDE the files they prove. `ots verify X.ots`
+          # looks for its target as the .ots path minus the suffix, so moving
+          # them into a folder would break one-command verification for readers.
+          ls -la ./*.ots
 
       - name: Commit the pending proofs
         run: |
           set -eu
           git config user.name  "opentimestamps (github actions)"
           git config user.email "actions@github.com"
-          git add timestamps
+          git add ./*.ots
           git diff --cached --quiet && { echo "no new proofs"; exit 0; }
           git commit -m "OpenTimestamps: pending proofs for the edition [skip ci]"
           git push

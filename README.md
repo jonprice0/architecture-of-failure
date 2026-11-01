@@ -159,9 +159,17 @@ the main text's Provenance. Nothing else in `01`–`07` differs from the source 
 
 The main text of this edition is SHA-256 `02cc34ddd9419c218a510578eaa1bc48abc8bc7f0e5681927c82bcdea5d93133`.
 
-`SHA256SUMS` carries every file. `timestamps/` carries OpenTimestamps proofs: a proof commits these exact
-bytes to a point in time, independently of this platform and of the author. Pending proofs are committed at
-publication and the upgraded proofs are committed again once they are confirmed in a Bitcoin block.
+`SHA256SUMS` carries every file's hash. Beside it, and beside each of the eight numbered parts, sits an
+OpenTimestamps proof — `SHA256SUMS.ots` and so on. A proof commits those exact bytes to a point in time,
+independently of this platform and of the author, by anchoring them in the Bitcoin blockchain. To check one
+yourself:
+
+    pip install opentimestamps-client
+    ots verify SHA256SUMS.ots
+
+Proofs are committed as pending and upgraded once they are confirmed in a block, usually within a day; a
+pending proof already fixes the time, it simply cannot be independently checked until the block exists.
+Because `SHA256SUMS` commits every file's hash, timestamping it timestamps the whole edition.
 
 The author's integrity regime is described in part four. Every edit to the main text was made by atomic
 replace with SHA-256 read-back and left a receipt and a diff in a private action ledger; the ledger holds
