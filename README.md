@@ -90,6 +90,8 @@ A citation that carries the hash points at one exact edition, which is the whole
 
 ## The files
 
+**Read it in one file.** [`The Architecture of Failure — complete edition.md`](./The%20Architecture%20of%20Failure%20%E2%80%94%20complete%20edition.md) is the whole work as one continuous document — the poem, the reading, the five logs and the Charter, in order, with a table of contents. It is a derived reading copy and says so at its head: it adds a four-line block and one heading per part, and nothing else. The numbered parts below are the same text, split so that a citation can name one part and so that each can be hashed and timestamped on its own. If the two ever disagree, the numbered parts govern.
+
 Every file, its size, and its SHA-256 as shipped. The links are relative, so they resolve on whichever of the two hosts you are reading this on.
 
 | file | bytes | SHA-256 |
@@ -103,6 +105,7 @@ Every file, its size, and its SHA-256 as shipped. The links are relative, so the
 | [`07 Log 5.md`](./07%20Log%205.md) | 352,753 | `5d4afcb54a7a306e8d093ef605132319f5d8c119c7b592c15059760be54ffc26` |
 | [`08 Project Charter (publication copy).md`](./08%20Project%20Charter%20%28publication%20copy%29.md) | 99,371 | `2628cb43d13bb3943ddb6b0c289152eb4fac8479191a4750db81f8a94b746b9f` |
 | [`LICENSE`](./LICENSE) | 913 | `ef6733677648682250065f122ecd2fe725b7c057a461acaa6544653adb560e03` |
+| [`The Architecture of Failure — complete edition.md`](./The%20Architecture%20of%20Failure%20%E2%80%94%20complete%20edition.md) | 1,080,200 | `ace086f317976d7a2feb1d9b771b45625ed362c7e0a5b1a25d8614854a9b58ee` |
 | [`jsonl/logs.jsonl`](./jsonl/logs.jsonl) | 1,489,712 | `81ce0013a0ce38809c0945d2183e7d36a5544f81008433035cca250c89ed7fdb` |
 | [`jsonl/main_text.jsonl`](./jsonl/main_text.jsonl) | 173,141 | `f7a6af69258b241451b21075c52f3395e3179c8884257eca70bec40a614ca977` |
 | [`jsonl/partita.jsonl`](./jsonl/partita.jsonl) | 147,062 | `99add2d6285627bd2e69f5258f1de3af073252d300e8c002591305b204535021` |

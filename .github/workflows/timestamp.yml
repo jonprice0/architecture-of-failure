@@ -32,10 +32,16 @@ jobs:
       - name: Stamp SHA256SUMS and each of the eight parts
         run: |
           set -eu
+          # Re-stamp from scratch. `ots stamp` refuses a file that already has a
+          # proof, and while the edition is still being revised the proof that
+          # matters is the one for the bytes that actually ship. Once SHA256SUMS
+          # stops changing this workflow stops firing and the proofs stand.
+          rm -f ./*.ots
           # SHA256SUMS commits every file's hash, so stamping it transitively
           # timestamps the whole edition. The eight parts are stamped as well so
           # that any one of them can be verified on its own.
           ots stamp SHA256SUMS \
+            "The Architecture of Failure — complete edition.md" \
             "01 The Yaowarat Partita.md" \
             "02 The Architecture of Failure — main text.md" \
             "03 Log 1.md" "04 Log 2.md" "05 Log 3.md" "06 Log 4.md" "07 Log 5.md" \
