@@ -52,11 +52,6 @@ jobs:
           done
           rm -f ./*.ots.bak
 
-      - name: Verify every proof still describes the file beside it
-        run: |
-          chmod +x .github/verify-proofs.sh
-          .github/verify-proofs.sh
-
       # What date does the attestation actually assert? A block height is not a
       # date, and the card's colophon makes a dated claim, so the date a reader
       # would arrive at belongs in this log rather than in anyone's memory.
@@ -89,6 +84,11 @@ jobs:
           echo
           echo "Each attested proof asserts its file existed no later than the"
           echo "block above. Publication was 2026-11-02T00:00:00-05:00."
+
+      - name: Verify every proof still describes the file beside it
+        run: |
+          chmod +x .github/verify-proofs.sh
+          .github/verify-proofs.sh
 
       - name: Commit if anything upgraded
         run: |
