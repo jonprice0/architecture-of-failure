@@ -104,12 +104,13 @@ Every file, its size, and its SHA-256 as shipped. The links are relative, so the
 | [`06 Log 4.md`](./06%20Log%204.md) | 45,008 | `372e64558dda1b203c1d752c6cc677daab9e841bd7cec2e545f056ebaeb323dc` |
 | [`07 Log 5.md`](./07%20Log%205.md) | 352,753 | `5d4afcb54a7a306e8d093ef605132319f5d8c119c7b592c15059760be54ffc26` |
 | [`08 Project Charter (publication copy).md`](./08%20Project%20Charter%20%28publication%20copy%29.md) | 99,371 | `2628cb43d13bb3943ddb6b0c289152eb4fac8479191a4750db81f8a94b746b9f` |
-| [`LICENSE`](./LICENSE) | 913 | `ef6733677648682250065f122ecd2fe725b7c057a461acaa6544653adb560e03` |
+| [`LICENSE`](./LICENSE) | 18,658 | `f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f` |
+| [`NOTICE`](./NOTICE) | 948 | `e39df2a3714a4781d3f2884263df04837d8d379fd5e0799023224e9365b54037` |
 | [`The Architecture of Failure — complete edition.md`](./The%20Architecture%20of%20Failure%20%E2%80%94%20complete%20edition.md) | 1,080,180 | `a275d7a168f17b0d834c5d7f036aa383f1315c2c0fc68ae8aa5b42376f62d9ac` |
 | [`jsonl/logs.jsonl`](./jsonl/logs.jsonl) | 1,489,712 | `81ce0013a0ce38809c0945d2183e7d36a5544f81008433035cca250c89ed7fdb` |
 | [`jsonl/main_text.jsonl`](./jsonl/main_text.jsonl) | 173,141 | `f7a6af69258b241451b21075c52f3395e3179c8884257eca70bec40a614ca977` |
 | [`jsonl/partita.jsonl`](./jsonl/partita.jsonl) | 147,062 | `99add2d6285627bd2e69f5258f1de3af073252d300e8c002591305b204535021` |
-| [`manifest.json`](./manifest.json) | 4,119 | `3b70207400a07606b529e835cc5e4d43e11cd10789ac6fc0d42ad973a0126680` |
+| [`manifest.json`](./manifest.json) | 4,268 | `7a496e3b74b5b2385d8bdaf4e312171676a4558b5faae9fd31c22e2208195c66` |
 | [`text/log_1.txt`](./text/log_1.txt) | 175,644 | `3b20ec21caed2d5606fbb3414284bb82950e0893e5994a12b08ec8eb252502a7` |
 | [`text/log_2.txt`](./text/log_2.txt) | 150,548 | `ac3b7b6ad09925c3ce4764b44f0891e323e1120e5be99aae9f44bc16465f6479` |
 | [`text/log_3.txt`](./text/log_3.txt) | 88,434 | `65404a67a9763a0a3f05d9d9bd826a88073472652cd4e4ee1c0c4a084ba433a1` |

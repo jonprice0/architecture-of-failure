@@ -61,9 +61,14 @@
       "words": 14186
     },
     "LICENSE": {
-      "sha256": "ef6733677648682250065f122ecd2fe725b7c057a461acaa6544653adb560e03",
-      "bytes": 913,
-      "words": 133
+      "sha256": "f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f",
+      "bytes": 18658,
+      "words": 2574
+    },
+    "NOTICE": {
+      "sha256": "e39df2a3714a4781d3f2884263df04837d8d379fd5e0799023224e9365b54037",
+      "bytes": 948,
+      "words": 140
     },
     "text/log_1.txt": {
       "sha256": "3b20ec21caed2d5606fbb3414284bb82950e0893e5994a12b08ec8eb252502a7",
