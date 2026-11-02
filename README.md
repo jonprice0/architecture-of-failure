@@ -72,7 +72,7 @@ The machine carried this document to the public record at the author's instructi
 
 **Citation.**
 
-> Price, Jonathan A. *The Architecture of Failure: A Disclosure, with Logs.* 2026. Hugging Face dataset `architecture-of-failure`. Main text SHA-256 `02cc34ddd9419c218a510578eaa1bc48abc8bc7f0e5681927c82bcdea5d93133`.
+> Price, Jonathan A. *The Architecture of Failure: A Disclosure, with Logs.* 2026. Hugging Face dataset `architecture-of-failure`. DOI [`10.57967/hf/11368`](https://doi.org/10.57967/hf/11368). Main text SHA-256 `02cc34ddd9419c218a510578eaa1bc48abc8bc7f0e5681927c82bcdea5d93133`.
 
 ```bibtex
 @misc{price2026architecture,
@@ -80,6 +80,7 @@ The machine carried this document to the public record at the author's instructi
   title        = {The Architecture of Failure: A Disclosure, with Logs},
   year         = {2026},
   publisher    = {Hugging Face},
+  doi          = {10.57967/hf/11368},
   howpublished = {Dataset, \url{https://huggingface.co/datasets/jonprice0/architecture-of-failure}},
   note         = {Main text SHA-256 02cc34ddd9419c218a510578eaa1bc48abc8bc7f0e5681927c82bcdea5d93133}
 }
