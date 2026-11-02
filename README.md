@@ -122,6 +122,7 @@ Every file, its size, and its SHA-256 as shipped. The links are relative, so the
 
 - Record, with commit history and timestamp proofs: https://github.com/jonprice0/architecture-of-failure
 - Dataset, with the viewer and full-text search: https://huggingface.co/datasets/jonprice0/architecture-of-failure
+- The whole work as one page, to read in a browser: https://jonprice0.github.io/architecture-of-failure/
 
 Every file is directly fetchable, no client and no account, at either:
 

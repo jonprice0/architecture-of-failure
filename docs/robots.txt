@@ -1,0 +1,5 @@
+# The whole point of this page is to be read, by people and by machines alike.
+User-agent: *
+Allow: /
+
+Sitemap: https://jonprice0.github.io/architecture-of-failure/sitemap.xml
