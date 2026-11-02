@@ -1,26 +1,34 @@
-# Internet Archive snapshots — 2026-11-02T05:13:47Z
+# Internet Archive snapshots — 2026-11-02T19:03:23Z
 # submitted by .github/workflows/archive.yml
+#
+# Each line below is what the Wayback availability API reports for the
+# URL, not what the save request appeared to return. A line reads SAVED
+# only when the snapshot is dated at or after this run began; an older
+# snapshot is reported as such, and a URL with no snapshot at all is
+# reported as NOT ARCHIVED with the save request's status code.
 
-NOT ARCHIVED  <-  https://github.com/jonprice0/architecture-of-failure
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/01%20The%20Yaowarat%20Partita.md
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/02%20The%20Architecture%20of%20Failure%20%E2%80%94%20main%20text.md
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/03%20Log%201.md
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/04%20Log%202.md
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/05%20Log%203.md
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/06%20Log%204.md
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/07%20Log%205.md
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/08%20Project%20Charter%20%28publication%20copy%29.md
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/LICENSE
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/README.md
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/The%20Architecture%20of%20Failure%20%E2%80%94%20complete%20edition.md
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/logs.jsonl
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/main_text.jsonl
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/partita.jsonl
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/manifest.json
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_1.txt
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_2.txt
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_3.txt
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_4.txt
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_5.txt
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/main_text.txt
-NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/partita.txt
+NOT ARCHIVED (save http 200)  <-  https://github.com/jonprice0/architecture-of-failure
+NOT ARCHIVED (save http 200)  <-  https://jonprice0.github.io/architecture-of-failure/
+EXISTING  http://web.archive.org/web/20261102184650/https://huggingface.co/datasets/jonprice0/architecture-of-failure  <-  https://huggingface.co/datasets/jonprice0/architecture-of-failure
+EXISTING  http://web.archive.org/web/20261102051436/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/01%20The%20Yaowarat%20Partita.md  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/01%20The%20Yaowarat%20Partita.md
+EXISTING  http://web.archive.org/web/20261102184845/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/02%20The%20Architecture%20of%20Failure%20%E2%80%94%20main%20text.md  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/02%20The%20Architecture%20of%20Failure%20%E2%80%94%20main%20text.md
+EXISTING  http://web.archive.org/web/20261102184904/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/03%20Log%201.md  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/03%20Log%201.md
+EXISTING  http://web.archive.org/web/20261102184928/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/04%20Log%202.md  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/04%20Log%202.md
+EXISTING  http://web.archive.org/web/20261102184951/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/05%20Log%203.md  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/05%20Log%203.md
+NOT ARCHIVED (save http 200)  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/06%20Log%204.md
+NOT ARCHIVED (save http 200)  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/07%20Log%205.md
+EXISTING  http://web.archive.org/web/20261102185157/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/08%20Project%20Charter%20(publication%20copy).md  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/08%20Project%20Charter%20%28publication%20copy%29.md
+EXISTING  http://web.archive.org/web/20261102185326/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/LICENSE  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/LICENSE
+EXISTING  http://web.archive.org/web/20261102185427/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/README.md  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/README.md
+EXISTING  http://web.archive.org/web/20261102051616/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/The%20Architecture%20of%20Failure%20%E2%80%94%20complete%20edition.md  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/The%20Architecture%20of%20Failure%20%E2%80%94%20complete%20edition.md
+EXISTING  http://web.archive.org/web/20261102185507/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/logs.jsonl  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/logs.jsonl
+EXISTING  http://web.archive.org/web/20261102185529/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/main_text.jsonl  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/main_text.jsonl
+EXISTING  http://web.archive.org/web/20261102185556/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/partita.jsonl  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/partita.jsonl
+EXISTING  http://web.archive.org/web/20261102185618/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/manifest.json  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/manifest.json
+EXISTING  http://web.archive.org/web/20261102185640/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_1.txt  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_1.txt
+NOT ARCHIVED (save http 200)  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_2.txt
+EXISTING  http://web.archive.org/web/20261102185739/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_3.txt  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_3.txt
+EXISTING  http://web.archive.org/web/20261102185807/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_4.txt  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_4.txt
+EXISTING  http://web.archive.org/web/20261102185837/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_5.txt  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_5.txt
+EXISTING  http://web.archive.org/web/20261102185901/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/main_text.txt  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/main_text.txt
+EXISTING  http://web.archive.org/web/20261102185926/https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/partita.txt  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/partita.txt
