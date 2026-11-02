@@ -19,7 +19,7 @@
 | | [Log 3](#part-iii-3) | | 13,001 |
 | | [Log 4](#part-iii-4) | | 6,644 |
 | | [Log 5](#part-iii-5) | | 55,236 |
-| **IV** | [The Project Charter](#part-iv) | *the cure attempted* | 14,186 |
+| **IV** | [The Project Charter](#part-iv) |  | 14,186 |
 
 **166,037 words.** The poem is first because it is the first piece of evidence, not
 because it is a preface.
