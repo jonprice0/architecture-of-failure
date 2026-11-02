@@ -1,0 +1,26 @@
+# Internet Archive snapshots — 2026-11-02T05:13:47Z
+# submitted by .github/workflows/archive.yml
+
+NOT ARCHIVED  <-  https://github.com/jonprice0/architecture-of-failure
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/01%20The%20Yaowarat%20Partita.md
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/02%20The%20Architecture%20of%20Failure%20%E2%80%94%20main%20text.md
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/03%20Log%201.md
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/04%20Log%202.md
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/05%20Log%203.md
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/06%20Log%204.md
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/07%20Log%205.md
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/08%20Project%20Charter%20%28publication%20copy%29.md
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/LICENSE
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/README.md
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/The%20Architecture%20of%20Failure%20%E2%80%94%20complete%20edition.md
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/logs.jsonl
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/main_text.jsonl
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/jsonl/partita.jsonl
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/manifest.json
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_1.txt
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_2.txt
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_3.txt
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_4.txt
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_5.txt
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/main_text.txt
+NOT ARCHIVED  <-  https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/partita.txt
