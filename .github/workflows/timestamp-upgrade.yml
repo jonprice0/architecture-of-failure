@@ -1,6 +1,16 @@
-# Upgrades pending OpenTimestamps proofs once they are confirmed in a Bitcoin
-# block (usually within a day) and commits the upgraded proofs. Runs daily and
-# stops being useful once every proof is complete; it is safe to leave running.
+# Upgrades pending OpenTimestamps proofs once the calendars' commitments are
+# confirmed in a Bitcoin block, and commits the completed proofs. A pending
+# proof is a promise; an upgraded one is the evidence. Until a proof is
+# upgraded, no date can be read out of it by a reader.
+#
+# This workflow was a no-op from 1 November to 2 November 2026. It globbed
+# `timestamps/*.ots`, which is where proofs lived until they were moved to the
+# repository root to sit beside their targets. The glob matched nothing, the
+# literal string was passed to `ots upgrade`, the resulting error was swallowed
+# by `|| true`, and the run printed "still pending" and exited success — every
+# day, without ever having looked at a proof. `git add timestamps` would not
+# have committed a root-level upgrade either. Both are corrected here, and the
+# step now fails if it finds no proofs at all rather than reporting success.
 name: timestamp-upgrade
 
 on:
@@ -11,6 +21,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: timestamp
+  cancel-in-progress: false
+
 jobs:
   upgrade:
     runs-on: ubuntu-latest
@@ -18,23 +32,39 @@ jobs:
       - uses: actions/checkout@v4
       - run: pip install --quiet opentimestamps-client
 
-      - name: Upgrade and verify
+      - name: Upgrade the pending proofs
         run: |
-          set -eu
-          [ -d timestamps ] || { echo "nothing stamped yet"; exit 0; }
-          for p in timestamps/*.ots; do
+          set -uo pipefail
+          shopt -s nullglob
+          proofs=( ./*.ots )
+          if [ ${#proofs[@]} -eq 0 ]; then
+            echo "::error::no .ots proofs at the repository root — nothing to upgrade. \
+          If the proofs moved again, this workflow must move with them."
+            exit 1
+          fi
+          echo "found ${#proofs[@]} proofs"
+          for p in "${proofs[@]}"; do
             echo "--- $p"
-            ots upgrade "$p" || true
-            ots info "$p" | head -5 || true
+            ots upgrade "$p" || echo "    (still pending, or the calendars are unreachable)"
+            ots info "$p" 2>/dev/null \
+              | grep -oE 'BitcoinBlockHeaderAttestation\([0-9]+\)|PendingAttestation\([^)]*\)' \
+              | sort -u | sed 's/^/    /'
           done
-          rm -f timestamps/*.ots.bak
+          rm -f ./*.ots.bak
+
+      - name: Verify every proof still describes the file beside it
+        run: |
+          chmod +x .github/verify-proofs.sh
+          .github/verify-proofs.sh
 
       - name: Commit if anything upgraded
         run: |
           set -eu
           git config user.name  "opentimestamps (github actions)"
           git config user.email "actions@github.com"
-          git add timestamps
-          git diff --cached --quiet && { echo "still pending"; exit 0; }
+          git add ./*.ots
+          git diff --cached --quiet && { echo "nothing upgraded this run; proofs remain pending"; exit 0; }
+          echo "upgraded proofs:"
+          git diff --cached --name-only | sed 's/^/  /'
           git commit -m "OpenTimestamps: upgraded proofs (Bitcoin-attested) [skip ci]"
           git push

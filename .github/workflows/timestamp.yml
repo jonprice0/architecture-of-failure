@@ -66,6 +66,14 @@ jobs:
           ots stamp "${need[@]}"
           ls -la ./*.ots
 
+      # Proposed twice in the handoff and not built until now: the machine, not
+      # a person's memory, should be what notices a stale proof. This runs
+      # before the commit, so a bad proof is never pushed.
+      - name: Verify every proof describes the file beside it
+        run: |
+          chmod +x .github/verify-proofs.sh
+          .github/verify-proofs.sh
+
       - name: Commit the pending proofs
         run: |
           set -eu
