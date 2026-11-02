@@ -12,6 +12,29 @@
 <meta property="og:description" content="The Architecture of Failure: A Disclosure, with Logs — an analysis of safety failures in long multi-turn conversations with commercial language models, with five unedited session logs, a long poem, and the integrity charter the logs were kept under. By Jonathan A. Price. CC BY 4.0.">
 <meta property="og:url" content="https://jonprice0.github.io/architecture-of-failure/">
 <meta name="twitter:card" content="summary">
+<link rel="alternate" type="application/pdf" title="The Architecture of Failure (PDF, 244 pages)" href="https://jonprice0.github.io/architecture-of-failure/the-architecture-of-failure.pdf">
+<!-- Highwire Press tags. Google Scholar does not read schema.org JSON-LD; these
+     are what it reads, and without them it has no way to recognise this page as
+     a work rather than a long web page. citation_pdf_url points at the PDF
+     printed from this page's own print stylesheet. -->
+<meta name="citation_title" content="The Architecture of Failure: A Disclosure, with Logs">
+<meta name="citation_author" content="Price, Jonathan A.">
+<meta name="citation_publication_date" content="2026/11/02">
+<meta name="citation_online_date" content="2026/11/02">
+<meta name="citation_language" content="en">
+<meta name="citation_doi" content="10.57967/hf/11368">
+<meta name="citation_abstract_html_url" content="https://jonprice0.github.io/architecture-of-failure/">
+<meta name="citation_pdf_url" content="https://jonprice0.github.io/architecture-of-failure/the-architecture-of-failure.pdf">
+<meta name="citation_keywords" content="AI safety; multi-turn conversation; language models; sycophancy; guardrails; alignment; disclosure; long context; model conduct">
+<!-- Dublin Core, for OAI-style and library harvesters. -->
+<meta name="DC.title" content="The Architecture of Failure: A Disclosure, with Logs">
+<meta name="DC.creator" content="Price, Jonathan A.">
+<meta name="DC.date" content="2026-11-02">
+<meta name="DC.type" content="Text">
+<meta name="DC.format" content="text/html">
+<meta name="DC.language" content="en">
+<meta name="DC.identifier" content="https://doi.org/10.57967/hf/11368">
+<meta name="DC.rights" content="https://creativecommons.org/licenses/by/4.0/">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ScholarlyArticle",
  "headline":"The Architecture of Failure: A Disclosure, with Logs",
@@ -21,6 +44,9 @@
  "license":"https://creativecommons.org/licenses/by/4.0/",
  "url":"https://jonprice0.github.io/architecture-of-failure/",
  "isBasedOn":"https://huggingface.co/datasets/jonprice0/architecture-of-failure",
+ "encoding":{"@type":"MediaObject",
+   "contentUrl":"https://jonprice0.github.io/architecture-of-failure/the-architecture-of-failure.pdf",
+   "encodingFormat":"application/pdf"},
  "description":"The Architecture of Failure: A Disclosure, with Logs — an analysis of safety failures in long multi-turn conversations with commercial language models, with five unedited session logs, a long poem, and the integrity charter the logs were kept under. By Jonathan A. Price. CC BY 4.0."}
 </script>
 <style>
@@ -77,6 +103,37 @@ img{max-width:100%}
 footer.colophon{ max-width:var(--measure); margin:5rem auto 0; padding-top:1.5rem;
   border-top:1px solid var(--rule); font-size:.82rem; color:var(--ink-soft); }
 @media (max-width:560px){ body{font-size:17px} header.masthead{padding-top:2.5rem} }
+
+/* Paper. The PDF beside this page is printed from this stylesheet, so the two
+   are the same bytes rendered two ways rather than two separate documents. */
+@media print{
+  :root{ --ink:#111110; --ink-soft:#4a4844; --paper:#fff; --rule:#c4c0b8;
+         --accent:#6b1d1d; --quote:#f5f3ef; }
+  @page{ size:letter; margin:19mm 18mm 16mm; }
+  html,body{ background:#fff; }
+  body{ font-size:10pt; line-height:1.48; padding:0; }
+  main,header.masthead,footer.colophon{ max-width:none; margin:0; }
+  header.masthead{ padding:0 0 1rem; }
+  /* Only the eight part anchors begin a new page. The other thirty-seven H1s
+     are the record's own hash-lines — the Partita's pseudocode comments and the
+     logs' Python — and must not each break a page. They stay as written. */
+  p:has(> a[id^="part-"]){ break-before:page; margin:0; }
+  h1{ font-size:1.22rem; margin:1.5rem 0 .75rem; padding-top:.75rem;
+      break-after:avoid; break-inside:avoid; }
+  h2,h3,h4,h5,h6{ break-after:avoid; break-inside:avoid; }
+  p,li{ orphans:2; widows:2; }
+  blockquote,tr,th,td{ break-inside:avoid; }
+  /* Screen scrolls wide content; paper cannot, so it must wrap or it is lost.
+     The widest code line in the logs is 885 characters. */
+  pre{ white-space:pre-wrap; overflow-wrap:break-word; word-break:break-word;
+       overflow:visible; font-size:7.6pt; line-height:1.35; padding:.6rem; }
+  code{ overflow-wrap:break-word; }
+  table{ display:table; overflow:visible; table-layout:fixed; width:100%;
+         font-size:8.4pt; }
+  th,td{ overflow-wrap:break-word; }
+  a{ color:inherit; text-decoration:none; }
+  hr{ margin:1.3rem 0; }
+}
 </style>
 </head>
 <body>
