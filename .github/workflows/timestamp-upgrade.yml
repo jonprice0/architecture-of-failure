@@ -57,6 +57,39 @@ jobs:
           chmod +x .github/verify-proofs.sh
           .github/verify-proofs.sh
 
+      # What date does the attestation actually assert? A block height is not a
+      # date, and the card's colophon makes a dated claim, so the date a reader
+      # would arrive at belongs in this log rather than in anyone's memory.
+      - name: Report the attested dates
+        run: |
+          set -uo pipefail
+          shopt -s nullglob
+          declare -A seen
+          for p in ./*.ots; do
+            for h in $(ots info "$p" 2>/dev/null \
+                       | grep -oE 'BitcoinBlockHeaderAttestation\([0-9]+\)' \
+                       | grep -oE '[0-9]+'); do
+              seen[$h]=1
+            done
+          done
+          if [ ${#seen[@]} -eq 0 ]; then echo "no Bitcoin attestations yet"; exit 0; fi
+          for h in "${!seen[@]}"; do
+            hash=$(curl -sS --max-time 30 "https://blockstream.info/api/block-height/$h" || true)
+            if [ -z "$hash" ]; then echo "block $h: could not resolve"; continue; fi
+            ts=$(curl -sS --max-time 30 "https://blockstream.info/api/block/$hash" \
+                 | jq -r '.timestamp' 2>/dev/null || true)
+            if [ -n "${ts:-}" ] && [ "$ts" != "null" ]; then
+              printf 'block %s  %s UTC  (%s ET)\n' "$h" \
+                "$(date -u -d "@$ts" '+%Y-%m-%d %H:%M:%S')" \
+                "$(TZ=America/New_York date -d "@$ts" '+%Y-%m-%d %H:%M:%S')"
+            else
+              echo "block $h: resolved $hash but no timestamp"
+            fi
+          done
+          echo
+          echo "Each attested proof asserts its file existed no later than the"
+          echo "block above. Publication was 2026-11-02T00:00:00-05:00."
+
       - name: Commit if anything upgraded
         run: |
           set -eu
