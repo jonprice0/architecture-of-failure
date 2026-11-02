@@ -1,6 +1,8 @@
-# Submits the repository page and every edition file to the Internet Archive's
-# Save Page Now, and records the archive URLs. Run by hand after publication —
-# archiving a page before it is public accomplishes nothing.
+# Submits the repository page, the reading page and every edition file to the
+# Internet Archive's Save Page Now, and records what the archive actually holds.
+# Run by hand after publication — archiving a page before it is public
+# accomplishes nothing. This is machinery, not part of the record: nothing
+# here is covered by SHA256SUMS.
 name: archive
 
 on:
@@ -18,33 +20,75 @@ jobs:
       - name: Save Page Now
         run: |
           set -u
+          UA="architecture-of-failure archive workflow (+https://github.com/${GITHUB_REPOSITORY})"
+          RUN_START=$(date -u +%Y%m%d%H%M%S)
           mkdir -p timestamps
           OUT=timestamps/wayback.txt
           : > "$OUT"
           {
             echo "# Internet Archive snapshots — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             echo "# submitted by .github/workflows/archive.yml"
+            echo "#"
+            echo "# Each line below is what the Wayback availability API reports for the"
+            echo "# URL, not what the save request appeared to return. A line reads SAVED"
+            echo "# only when the snapshot is dated at or after this run began; an older"
+            echo "# snapshot is reported as such, and a URL with no snapshot at all is"
+            echo "# reported as NOT ARCHIVED with the save request's status code."
             echo
           } >> "$OUT"
-          RAW="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main"
+
+          enc () { python3 -c "import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1],safe=':/'))" "$1"; }
+
           submit () {
             url="$1"
-            loc=$(curl -sS -I --max-time 90 "https://web.archive.org/save/${url}" \
-                  | tr -d '\r' | awk 'tolower($1)=="content-location:"{print $2}')
-            if [ -n "${loc:-}" ]; then
-              echo "https://web.archive.org${loc}  <-  ${url}" >> "$OUT"
+            # GET, not HEAD. Save Page Now does not start a capture for a HEAD
+            # request, which is why every line of this file previously read
+            # NOT ARCHIVED even on runs where the saves had in fact succeeded.
+            code=$(curl -sS -o /dev/null -w '%{http_code}' -L --max-time 150 \
+                   -A "$UA" "https://web.archive.org/save/${url}" 2>/dev/null || echo 000)
+            sleep 8
+            # Then ask the archive what it holds. The save response's shape has
+            # changed before and broke this file once already; what is archived
+            # is the only claim worth recording, and this endpoint answers it.
+            # A here-string, so this read does not eat the SHA256SUMS that the
+            # outer loop is reading from. jq exits non-zero on an HTML error
+            # page and prints nothing, which lands correctly in NOT ARCHIVED.
+            read -r ts snap <<<"$(curl -sS --max-time 60 -A "$UA" \
+              "https://archive.org/wayback/available?url=$(enc "$url")" 2>/dev/null \
+              | jq -r '(.archived_snapshots.closest // {}) | if .available then "\(.timestamp) \(.url)" else "" end' 2>/dev/null)"
+            if [ -z "${snap:-}" ]; then
+              printf 'NOT ARCHIVED (save http %s)  <-  %s\n' "$code" "$url" >> "$OUT"
+            elif ! printf '%s' "${ts:-}" | grep -qE '^[0-9]{14}$'; then
+              printf 'ODD TIMESTAMP %s  %s  <-  %s\n' "${ts:-none}" "$snap" "$url" >> "$OUT"
+            elif [ "$ts" -ge "$RUN_START" ]; then
+              printf 'SAVED     %s  <-  %s\n' "$snap" "$url" >> "$OUT"
             else
-              echo "NOT ARCHIVED  <-  ${url}" >> "$OUT"
+              printf 'EXISTING  %s  <-  %s\n' "$snap" "$url" >> "$OUT"
             fi
             sleep 6
           }
+
+          RAW="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main"
+          OWNER=${GITHUB_REPOSITORY%%/*}
+          NAME=${GITHUB_REPOSITORY##*/}
+
+          # The three human entrances first, then the record itself.
           submit "https://github.com/${GITHUB_REPOSITORY}"
+          submit "https://${OWNER}.github.io/${NAME}/"
+          submit "https://huggingface.co/datasets/${GITHUB_REPOSITORY}"
           while IFS= read -r line; do
+            [ -n "$line" ] || continue
             name=${line#*  }
-            enc=$(python3 -c "import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1]))" "$name")
-            submit "${RAW}/${enc}"
+            [ -n "$name" ] || continue
+            submit "${RAW}/$(enc "$name")"
           done < SHA256SUMS
+
+          echo "----- $OUT -----"
           cat "$OUT"
+          echo "----- summary -----"
+          printf 'saved:        %s\n' "$(grep -c '^SAVED'        "$OUT" || true)"
+          printf 'existing:     %s\n' "$(grep -c '^EXISTING'     "$OUT" || true)"
+          printf 'not archived: %s\n' "$(grep -c '^NOT ARCHIVED' "$OUT" || true)"
 
       - name: Commit the archive URLs
         run: |
