@@ -82,4 +82,5 @@ jobs:
           git add ./*.ots
           git diff --cached --quiet && { echo "no new proofs"; exit 0; }
           git commit -m "OpenTimestamps: pending proofs for the edition [skip ci]"
-          git push
+          chmod +x .github/push-with-rebase.sh
+          .github/push-with-rebase.sh

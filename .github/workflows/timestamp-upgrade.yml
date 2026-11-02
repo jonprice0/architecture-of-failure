@@ -100,4 +100,5 @@ jobs:
           echo "upgraded proofs:"
           git diff --cached --name-only | sed 's/^/  /'
           git commit -m "OpenTimestamps: upgraded proofs (Bitcoin-attested) [skip ci]"
-          git push
+          chmod +x .github/push-with-rebase.sh
+          .github/push-with-rebase.sh

@@ -98,4 +98,5 @@ jobs:
           git add timestamps/wayback.txt
           git diff --cached --quiet && exit 0
           git commit -m "Internet Archive: snapshot URLs for the edition [skip ci]"
-          git push
+          chmod +x .github/push-with-rebase.sh
+          .github/push-with-rebase.sh
