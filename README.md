@@ -86,7 +86,7 @@ The machine carried this document to the public record at the author's instructi
 }
 ```
 
-A citation that carries the hash points at one exact edition, which is the whole point of the regime. Every file's hash is in `SHA256SUMS` and in `jsonl/manifest.json`; the OpenTimestamps proofs are in `timestamps/`.
+A citation that carries the hash points at one exact edition, which is the whole point of the regime. Every file's hash is in `SHA256SUMS`, and `manifest.json` repeats them for all but this card and itself; the OpenTimestamps proofs sit beside their targets at the repository root, each as `<file>.ots`.
 
 ## The files
 
