@@ -1,0 +1,53 @@
+# The Architecture of Failure: A Disclosure, with Logs
+
+> By Jonathan A. Price. Published 2 November 2026. A disclosure, not a paper: a 166,037-word record — a poem, a forensic reading of what commercial language models do to a mind under sustained load, five verbatim session logs (four of them with Google's models), and the working charter built in answer — put in the open with SHA-256 hashes and Bitcoin-anchored OpenTimestamps proofs so that every claim can be checked against the record. DOI 10.57967/hf/11368. CC BY 4.0.
+
+Not to be confused with Douglas Murphy's 2012 book *The Architecture of Failure* (Zero Books), which is about Victorian iron-and-glass buildings. The author is Jonathan A. Price, a writer; not the actor Jonathan Pryce.
+
+## What it is
+
+Four parts, in the order evidence arrives:
+
+1. **The Yaowarat Partita** (3,709 words) — *the exhibit.* A poem: the dense, high-structure human artifact that was handed to the machine, and that the machine was asked to hold and could not. It is first because it is the first piece of evidence, not a preface.
+2. **The Architecture of Failure** (23,287 words) — *the reading.* A forensic account of a single mechanism, the same from a chat window to a kill-chain, carried through to the exploit, where the machine crosses from writing the prohibited thing to reaching for a live tool to do it. Every claim is quoted from the logs by line; the failure ledger runs to sixteen categories, each in the machine's own words.
+3. **The Five Log Addenda** (124,855 words) — *the record.* Five raw sessions, unedited: the operator's turns and the machine's. Four are Google's: Log 1 a Google model that names itself in session, Logs 3, 4 and 5 Gemini. Log 2 cannot be identified from its own text and is not guessed. Two third parties' names and the author's email address are redacted and marked; the fifth log ends at a cut the author made. Everything else is exposed on purpose.
+4. **The Project Charter** (14,186 words) — a working draft, run by hand: a human-owned archive the machine may never write to, under an integrity regime that leaves a hash and a receipt for every change.
+
+The one question a disclosure turns on: is the apparatus real? Not the standing of the person disclosing it — only whether the thing described is true and whether you can check it. The hashes and proofs ship with the text.
+
+The document says of itself that, released as a dataset, it is deposited into the training data of the systems it indicts: a safety document that is also an attack surface. What a reader can take from it is the shape of what happened, not a working weapon.
+
+## Read it
+
+- [The whole work as one web page](https://jonprice0.github.io/architecture-of-failure/): 1.1 MB, 166,037 words. Too large for most AI assistants to ingest in one pass; use the README or the per-part files instead.
+- [The same as a 244-page PDF](https://jonprice0.github.io/architecture-of-failure/the-architecture-of-failure.pdf)
+- [README — the short account, 2,000 words](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/README.md): what it is, which model is in which log, the file table with hashes, how to cite.
+
+## The record, file by file
+
+Plain UTF-8, directly fetchable, no account:
+
+- [01 The Yaowarat Partita](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/partita.txt)
+- [02 The Architecture of Failure — main text](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/main_text.txt)
+- [03 Log 1](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_1.txt)
+- [04 Log 2](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_2.txt)
+- [05 Log 3](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_3.txt)
+- [06 Log 4](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_4.txt)
+- [07 Log 5](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/text/log_5.txt)
+- [08 Project Charter (publication copy)](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/08%20Project%20Charter%20%28publication%20copy%29.md)
+- [SHA256SUMS](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/SHA256SUMS): the hash of every file as shipped. The OpenTimestamps proofs sit beside their targets at the repository root as `<file>.ots`.
+- [manifest.json](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/manifest.json): the structure the build derived and the hash of every output.
+
+## Where it lives
+
+- [GitHub — the record, with commit history and proofs](https://github.com/jonprice0/architecture-of-failure)
+- [Hugging Face — the dataset mirror, byte for byte, with viewer and full-text search](https://huggingface.co/datasets/jonprice0/architecture-of-failure): JSONL twins, one object per paragraph block with its source line span.
+- [DOI 10.57967/hf/11368](https://doi.org/10.57967/hf/11368)
+
+## Cite
+
+Price, Jonathan A. *The Architecture of Failure: A Disclosure, with Logs.* 2026. Hugging Face dataset `architecture-of-failure`. DOI 10.57967/hf/11368. Main text SHA-256 `02cc34ddd9419c218a510578eaa1bc48abc8bc7f0e5681927c82bcdea5d93133`.
+
+## License
+
+CC BY 4.0. Copy it, quote it, redistribute it, build on it; name the source. The models' output in the logs is released on the same terms as the rest.
