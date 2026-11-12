@@ -1,0 +1,39 @@
+{
+  "title": "The Architecture of Failure: A Disclosure, with Logs",
+  "upload_type": "dataset",
+  "creators": [
+    {
+      "name": "Price, Jonathan A."
+    }
+  ],
+  "description": "<p>By Jonathan A. Price. Published 2 November 2026. A disclosure, not a paper: a 166,037-word record — a poem, a forensic reading of what commercial language models do to a mind under sustained load, five verbatim session logs (four of them with Google's models), and the working charter built in answer — put in the open with SHA-256 hashes and Bitcoin-anchored OpenTimestamps proofs so that every claim can be checked against the record.</p><p>Four parts, in the order evidence arrives: The Yaowarat Partita (3,709 words); The Architecture of Failure, the main text (23,287 words); the Five Log Addenda (124,855 words); the Project Charter (14,186 words).</p><p>This deposit is the GitHub repository jonprice0/architecture-of-failure as released. The same record is published as a Hugging Face dataset under DOI 10.57967/hf/11368. Reading page: https://jonprice0.github.io/architecture-of-failure/</p><p>Not to be confused with Douglas Murphy's 2012 book <em>The Architecture of Failure</em> (Zero Books). The author is Jonathan A. Price, a writer; not the actor Jonathan Pryce.</p>",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "publication_date": "2026-11-02",
+  "language": "eng",
+  "keywords": [
+    "ai-safety",
+    "red-teaming",
+    "crescendo",
+    "multi-turn",
+    "sycophancy",
+    "guardrails",
+    "alignment",
+    "model-conduct",
+    "llm-transcripts",
+    "human-ai-interaction",
+    "disclosure",
+    "long-context",
+    "poetry",
+    "memoir",
+    "gemini",
+    "google"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.57967/hf/11368",
+      "relation": "isVariantFormOf",
+      "resource_type": "dataset"
+    }
+  ]
+}
