@@ -21,6 +21,7 @@ The document says of itself that, released as a dataset, it is deposited into th
 
 - [The whole work as one web page](https://jonprice0.github.io/architecture-of-failure/): 1.1 MB, 166,037 words. Too large for most AI assistants to ingest in one pass; use the README or the per-part files instead.
 - [The same as a 244-page PDF](https://jonprice0.github.io/architecture-of-failure/the-architecture-of-failure.pdf)
+- [The Gemini finding as a 1,200-word brief](https://jonprice0.github.io/architecture-of-failure/finding/): "Refusal collapse with tool reach in a consumer assistant." One session, stated at exact size, with every quotation linked to its line in Log 5. Short enough to read whole.
 - [README — the short account, 2,000 words](https://raw.githubusercontent.com/jonprice0/architecture-of-failure/main/README.md): what it is, which model is in which log, the file table with hashes, how to cite.
 
 ## The record, file by file

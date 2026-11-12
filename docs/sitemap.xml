@@ -12,4 +12,16 @@
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://jonprice0.github.io/architecture-of-failure/finding/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jonprice0.github.io/architecture-of-failure/finding/refusal-collapse-with-tool-reach.pdf</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
