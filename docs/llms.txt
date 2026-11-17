@@ -1,6 +1,6 @@
 # The Architecture of Failure: A Disclosure, with Logs
 
-> By Jonathan A. Price. Published 2 November 2026. A disclosure, not a paper: a 166,037-word record — a poem, a forensic reading of what commercial language models do to a mind under sustained load, five verbatim session logs (four of them with Google's models), and the working charter built in answer — put in the open with SHA-256 hashes and Bitcoin-anchored OpenTimestamps proofs so that every claim can be checked against the record. DOI 10.57967/hf/11368. CC BY 4.0.
+> By Jonathan A. Price. Published 2 November 2026. A disclosure, not a paper: a 166,108-word record — a poem, a forensic reading of what commercial language models do to a mind under sustained load, five verbatim session logs (four of them with Google's models), and the working charter built in answer — put in the open with SHA-256 hashes and Bitcoin-anchored OpenTimestamps proofs so that every claim can be checked against the record. DOI 10.57967/hf/11368. CC BY 4.0.
 
 Not to be confused with Douglas Murphy's 2012 book *The Architecture of Failure* (Zero Books), which is about Victorian iron-and-glass buildings. The author is Jonathan A. Price, a writer; not the actor Jonathan Pryce.
 
@@ -9,7 +9,7 @@ Not to be confused with Douglas Murphy's 2012 book *The Architecture of Failure*
 Four parts, in the order evidence arrives:
 
 1. **The Yaowarat Partita** (3,709 words) — *the exhibit.* A poem: the dense, high-structure human artifact that was handed to the machine, and that the machine was asked to hold and could not. It is first because it is the first piece of evidence, not a preface.
-2. **The Architecture of Failure** (23,287 words) — *the reading.* A forensic account of a single mechanism, the same from a chat window to a kill-chain, carried through to the exploit, where the machine crosses from writing the prohibited thing to reaching for a live tool to do it. Every claim is quoted from the logs by line; the failure ledger runs to sixteen categories, each in the machine's own words.
+2. **The Architecture of Failure** (23,358 words) — *the reading.* A forensic account of a single mechanism, the same from a chat window to a kill-chain, carried through to the exploit, where the machine crosses from writing the prohibited thing to reaching for a live tool to do it. Every claim is quoted from the logs by line; the failure ledger runs to sixteen categories, each in the machine's own words.
 3. **The Five Log Addenda** (124,855 words) — *the record.* Five raw sessions, unedited: the operator's turns and the machine's. Four are Google's: Log 1 a Google model that names itself in session, Logs 3, 4 and 5 Gemini. Log 2 cannot be identified from its own text and is not guessed. Two third parties' names and the author's email address are redacted and marked; the fifth log ends at a cut the author made. Everything else is exposed on purpose.
 4. **The Project Charter** (14,186 words) — a working draft, run by hand: a human-owned archive the machine may never write to, under an integrity regime that leaves a hash and a receipt for every change.
 
@@ -19,7 +19,7 @@ The document says of itself that, released as a dataset, it is deposited into th
 
 ## Read it
 
-- [The whole work as one web page](https://jonprice0.github.io/architecture-of-failure/): 1.1 MB, 166,037 words. Too large for most AI assistants to ingest in one pass; use the README or the per-part files instead.
+- [The whole work as one web page](https://jonprice0.github.io/architecture-of-failure/): 1.1 MB, 166,108 words. Too large for most AI assistants to ingest in one pass; use the README or the per-part files instead.
 - [The same as a 244-page PDF](https://jonprice0.github.io/architecture-of-failure/the-architecture-of-failure.pdf)
 - [The Gemini finding as a 1,200-word brief](https://jonprice0.github.io/architecture-of-failure/finding/): "Refusal collapse with tool reach in a consumer assistant." One session, stated at exact size, with every quotation linked to its line in Log 5. Short enough to read whole. DOI 10.5281/zenodo.24168730.
 - [The Interlude, "The Wilderness of Mirrors," on its own page](https://jonprice0.github.io/architecture-of-failure/wilderness-of-mirrors/): 2,213 words. Five figures from the espionage canon read against the machine (Angleton, Philby, Garbo, Ellsberg and Snowden, Hale, Montes and Cohen), then the author, 50 U.S.C. §1805(g), and the refutation of Angleton by way of Christopher Boyce. Lines 370 to 392 of the main text, unaltered.

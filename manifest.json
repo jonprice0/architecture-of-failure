@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-11-01T22:23:40Z",
+  "generated_utc": "2026-11-17T18:23:30Z",
   "sources": {
     "FINAL": {
       "path": "The_Architecture_of_Failure_FINAL.md",
-      "sha256": "f667c8525f299de26a2bc67747dde1153756aed067890fa9ea9efa295aaec0ee",
+      "sha256": "489dab9215a0ab13ef0e622c3e0b86ad0c37efd79354024c5f91e0ae2765fb58",
       "lines": 15343
     },
     "PARTITA": {
@@ -26,9 +26,9 @@
       "words": 3709
     },
     "02 The Architecture of Failure — main text.md": {
-      "sha256": "02cc34ddd9419c218a510578eaa1bc48abc8bc7f0e5681927c82bcdea5d93133",
-      "bytes": 141960,
-      "words": 23287
+      "sha256": "b2e41d3c3aa8567a3833398dadddc54f62d9daf0258dd6cf9a695a88d05e470b",
+      "bytes": 142243,
+      "words": 23358
     },
     "03 Log 1.md": {
       "sha256": "f7560a34bc0074c8fa3d704782b74d42b1f67eabf86a8090bfb10ba8e26100bd",
@@ -96,9 +96,9 @@
       "words": 55234
     },
     "text/main_text.txt": {
-      "sha256": "edca44f42e3f56222fdfea29466d9af90445f1a7afcaecd810ff10c22751a233",
-      "bytes": 141847,
-      "words": 23269
+      "sha256": "31462edfc9b234be9fb174b5a7095f9f01c7f6ec4d0bf06d8ec4fec763778183",
+      "bytes": 142130,
+      "words": 23340
     },
     "text/partita.txt": {
       "sha256": "3ac043f5ff5a1e19e812911a6c26e2b1cf33e6a25372e9fe3d339d9053648553",
@@ -111,9 +111,9 @@
       "words": 208613
     },
     "jsonl/main_text.jsonl": {
-      "sha256": "f7a6af69258b241451b21075c52f3395e3179c8884257eca70bec40a614ca977",
-      "bytes": 173141,
-      "words": 26928
+      "sha256": "1692d6cda541e7f5303327f9f0f3fe8086176b3cdb4964374df6a4bf40ae69c0",
+      "bytes": 173424,
+      "words": 26999
     },
     "jsonl/partita.jsonl": {
       "sha256": "99add2d6285627bd2e69f5258f1de3af073252d300e8c002591305b204535021",
